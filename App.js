@@ -1,11 +1,26 @@
-// إعداد الاتصال بـ Supabase
-// استبدل الروابط بالقيم الخاصة بك من Settings > API في Supabase
-const supabaseUrl = 'YOUR_SUPABASE_URL';
-const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
-const supabase = supabasejs.createClient(supabaseUrl, supabaseKey);
+// App.js - المحرك البرمجي لـ Cleanvengers
+const supabaseUrl = 'https://jnbiktezhuvenbvpzabo.supabase.co';
+const supabaseKey = 'sb_publishable_AUt0UNAWgYMO7dQ5rIOzsg_NxXd1OcE'; 
+const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
+// دالة لجلب البيانات وعرضها (Dashboard)
+async function fetchVisits() {
+    const { data, error } = await _supabase
+        .from('visits')
+        .select('*')
+        .order('updated_at', { ascending: false });
+
+    if (error) {
+        console.error('Error:', error.message);
+    } else {
+        console.log('Visits loaded:', data);
+        // هنا يمكنك إضافة كود لتحديث الـ HTML بالبيانات
+    }
+}
+
+// دالة تحديث الحالة (للعامل)
 async function updateVisitStatus(visitId, newStatus, currentVersion) {
-    const { data, error } = await supabase
+    const { data, error } = await _supabase
         .from('visits')
         .update({ 
             status: newStatus, 
@@ -15,9 +30,11 @@ async function updateVisitStatus(visitId, newStatus, currentVersion) {
         .eq('status_version', currentVersion);
 
     if (error) {
-        console.error("خطأ في التحديث:", error);
-        alert("فشل التحديث: قد يكون هناك تعديل آخر تم على هذه الزيارة.");
+        alert("فشل التحديث: قد يكون هناك تعديل آخر تم");
     } else {
-        console.log("تم تحديث الحالة بنجاح!");
+        alert("تم تحديث الحالة بنجاح!");
+        fetchVisits();
     }
 }
+
+document.addEventListener('DOMContentLoaded', fetchVisits);
