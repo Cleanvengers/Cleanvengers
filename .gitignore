@@ -1,3 +1,4 @@
-git add .
-git commit -m "feat: add core logistics logic and database schema"
-git push origin main
+node_modules/
+.env
+dist/
+*.log
