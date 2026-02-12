@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero App | Cleanvengers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .toggle-checkbox:checked { right: 0; border-color: #3CA200; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #3CA200; }
+    </style>
+</head>
+<body class="bg-gray-100 h-screen flex flex-col max-w-md mx-auto shadow-2xl border-x border-gray-200 bg-white">
+
+    <header class="bg-[#024B3E] text-white p-6 pb-12 rounded-b-[2.5rem] shadow-lg relative z-10">
+        <div class="flex justify-between items-center mb-6">
+            <div class="flex items-center gap-2">
+                <img src="logo.jpg" class="h-8 w-8 rounded bg-white p-0.5">
+                <span class="font-black tracking-tighter text-lg">HERO</span>
+            </div>
+            <div class="flex items-center gap-2 bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                <span class="text-[10px] font-bold uppercase tracking-widest">Online</span>
+                <div class="relative inline-block w-8 align-middle select-none transition duration-200 ease-in">
+                    <input type="checkbox" checked class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                    <label class="toggle-label block overflow-hidden h-4 rounded-full bg-green-900 cursor-pointer"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <p class="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Today's Earnings</p>
+            <h1 class="text-4xl font-black">€145.50</h1>
+        </div>
+    </header>
+
+    <div class="flex-1 overflow-y-auto px-6 -mt-6 relative z-20 space-y-4 pb-20">
+        
+        <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100">
+            <div class="flex justify-between items-start mb-4">
+                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> Next Job
+                </span>
+                <span class="font-black text-lg">€45.00</span>
+            </div>
+            <h3 class="font-bold text-gray-900 text-lg">Standard Cleaning</h3>
+            <p class="text-gray-400 text-sm mb-6">3 Hours • Standard Package</p>
+            
+            <div class="bg-gray-50 p-4 rounded-2xl mb-6">
+                <div class="flex items-start gap-3">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-[#3CA200] mt-0.5"></i>
+                    <div>
+                        <p class="text-sm font-bold text-gray-900">Münchener Str. 12</p>
+                        <p class="text-xs text-gray-500">80331 München, 3rd Floor</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <button class="py-3 rounded-xl bg-gray-100 text-gray-600 font-bold text-sm flex items-center justify-center gap-2 hover:bg-gray-200">
+                    <i data-lucide="phone" class="w-4 h-4"></i> Call
+                </button>
+                <a href="https://www.google.com/maps" target="_blank" class="py-3 rounded-xl bg-[#3CA200] text-white font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#024B3E] shadow-md">
+                    <i data-lucide="navigation" class="w-4 h-4"></i> Navigate
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 opacity-60">
+            <div class="flex justify-between items-start mb-2">
+                <span class="bg-gray-100 text-gray-500 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Completed</span>
+                <span class="font-black text-lg text-gray-400">€60.00</span>
+            </div>
+            <h3 class="font-bold text-gray-900">Window Cleaning</h3>
+            <p class="text-gray-400 text-sm">09:00 - 11:00 (2 Hours)</p>
+        </div>
+
+    </div>
+
+    <nav class="bg-white border-t border-gray-200 p-4 flex justify-around items-center text-xs font-bold text-gray-400">
+        <button class="flex flex-col items-center gap-1 text-[#024B3E]">
+            <i data-lucide="list" class="w-6 h-6"></i>
+            Schedule
+        </button>
+        <button class="flex flex-col items-center gap-1 hover:text-[#024B3E]">
+            <i data-lucide="map" class="w-6 h-6"></i>
+            Map
+        </button>
+        <button class="flex flex-col items-center gap-1 hover:text-[#024B3E]">
+            <i data-lucide="wallet" class="w-6 h-6"></i>
+            Wallet
+        </button>
+        <button class="flex flex-col items-center gap-1 hover:text-[#024B3E]">
+            <i data-lucide="user" class="w-6 h-6"></i>
+            Profile
+        </button>
+    </nav>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

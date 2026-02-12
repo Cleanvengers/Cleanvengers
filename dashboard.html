@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Cleanvengers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-white border-r border-gray-200 hidden md:flex flex-col">
+        <div class="p-6 flex items-center gap-3 border-b border-gray-50">
+            <img src="logo.jpg" class="h-8 w-8 rounded">
+            <span class="font-black tracking-tighter text-[#024B3E]">CLEANVENGERS</span>
+        </div>
+        <nav class="p-4 space-y-2 flex-1">
+            <a href="#" class="flex items-center gap-3 p-3 bg-green-50 text-[#024B3E] rounded-xl font-bold text-sm">
+                <span>🏠</span> Dashboard
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 text-gray-500 hover:bg-gray-50 rounded-xl font-semibold text-sm transition">
+                <span>📅</span> Bookings
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 text-gray-500 hover:bg-gray-50 rounded-xl font-semibold text-sm transition">
+                <span>📄</span> Invoices
+            </a>
+        </nav>
+        <div class="p-4 border-t border-gray-100">
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-10 bg-gray-200 rounded-full"></div>
+                <div>
+                    <p class="text-sm font-bold text-gray-900">Julia M.</p>
+                    <p class="text-xs text-gray-400">Munich, DE</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="flex justify-between items-center mb-10">
+            <div>
+                <h1 class="text-3xl font-black text-gray-900">Hello, Julia! 👋</h1>
+                <p class="text-gray-500 text-sm">Here is what’s happening with your home.</p>
+            </div>
+            <button class="bg-[#3CA200] text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:bg-[#024B3E] transition">
+                + New Cleaning
+            </button>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-gray-100">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="flex gap-4">
+                        <div class="h-14 w-14 bg-gray-100 rounded-2xl flex items-center justify-center text-2xl">🧹</div>
+                        <div>
+                            <h3 class="font-bold text-lg">Weekly Cleaning</h3>
+                            <p class="text-gray-400 text-xs">Every Friday @ 10:00</p>
+                        </div>
+                    </div>
+                    <span class="bg-green-100 text-[#024B3E] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Confirmed</span>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-xl flex items-center gap-4 mb-6">
+                    <div class="h-10 w-10 bg-gray-300 rounded-full border-2 border-white shadow-sm"></div>
+                    <div>
+                        <p class="text-xs font-bold text-gray-400 uppercase">Your Hero</p>
+                        <p class="text-sm font-bold text-[#024B3E]">Sarah Jenkins</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3">
+                    <button class="flex-1 bg-[#024B3E] text-white py-3 rounded-xl font-bold text-xs uppercase hover:bg-black transition">Edit Booking</button>
+                    <button class="px-4 border border-gray-200 rounded-xl hover:text-red-500 transition">Skip</button>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-[#024B3E] to-[#3CA200] rounded-[2rem] p-8 text-white flex flex-col justify-between shadow-lg">
+                <div>
+                    <h3 class="font-black text-2xl mb-2">Tax Season?</h3>
+                    <p class="text-white/80 text-sm leading-relaxed">Download your 2026 invoices to claim back 20% from the Finanzamt.</p>
+                </div>
+                <button class="bg-white text-[#024B3E] py-3 px-6 rounded-xl font-bold text-sm self-start mt-6 hover:bg-gray-100 transition">
+                    Download PDF
+                </button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
